@@ -19,4 +19,12 @@ describe("Unit Test for UserService Class", () => {
     expect(userData[2]).toBe("Alejandro Madera");
     expect(userData[3]).not.toBeUndefined();
   });
+
+  test("Case 3 Method to update user name ", () => {
+    const user = userService.create(1, "AlexM", "Alejandro Madera");
+    userService.updateUserName(user,"AlexMaderaP");
+
+    expect(user.username).toBe("AlexMaderaP");
+    
+  });
 });
