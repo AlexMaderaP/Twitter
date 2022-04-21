@@ -15,4 +15,16 @@ describe("Unit Test for User Class", () => {
     expect(alex.dateCreated).not.toBeUndefined();
     expect(alex.lastUpdated).not.toBeUndefined();
   })
+  test("Case 2 Agregate getters", () => {
+    const alex = new User(
+      1,
+      "AlexMadera",
+      "Alejandro Madera",
+      "Bio",
+    );
+    expect(alex.getUsername()).toBe("AlexMadera");
+    expect(alex.getBio()).toBe("Bio");
+    expect(alex.getDateCreated()).not.toBeUndefined();
+    expect(alex.getLastUpdated()).not.toBeUndefined();
+  })
 })
