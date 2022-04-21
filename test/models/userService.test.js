@@ -22,9 +22,20 @@ describe("Unit Test for UserService Class", () => {
 
   test("Case 3 Method to update user name ", () => {
     const user = userService.create(1, "AlexM", "Alejandro Madera");
-    userService.updateUserName(user,"AlexMaderaP");
+    userService.updateUserName(user, "AlexMaderaP");
 
     expect(user.username).toBe("AlexMaderaP");
-    
+  });
+
+  test("Case 4 Get all user names ", () => {
+    const user1 = userService.create(1, "Alex1", "Alejandro Madera");
+    const user2 = userService.create(2, "Alex2", "Alejandro Madera");
+    const user3 = userService.create(3, "Alex3", "Alejandro Madera");
+
+    const usernames = userService.getAllUsernames([user1, user2, user3]);
+
+    expect(usernames).toContain("Alex1");
+    expect(usernames).toContain("Alex2");
+    expect(usernames).toContain("Alex3");
   });
 });
