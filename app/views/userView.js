@@ -1,12 +1,20 @@
 const userService = require("./../services/userService");
 
-class userView{
-    static createUser(payload){
-        payload.username = this.username
-        payload.name = this.name
-        payload.id = this.id
-        userService.create(this.id,this.username,this.name)
+class userView {
+  static createUser(payload) {
+    if (payload === null) {
+      console.log("Error es null");
+      return { error: "payload no existe" };
+    } else if (
+      typeof payload.username === "string" &&
+      typeof payload.name === "string" &&
+      typeof payload.id === "number"
+    ) {
+      return userService.create(payload.id, payload.username, payload.name);
+    } else {
+      return { error: "necesitan tener un valor valido" };
     }
+  }
 }
 
-module.exports = userView
+module.exports = userView;
