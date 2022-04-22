@@ -1,4 +1,4 @@
-const userView = require("./../../app/models/userView");
+const userView = require("./../../app/views/userView");
 
 describe("Unit Test for UserView Class", () => {
   test("Return an error object when try to create a new user with a new payload ", () => {

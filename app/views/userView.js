@@ -1,4 +1,4 @@
-const userService = require("./../models/userService");
+const userService = require("./../services/userService");
 
 class userView{
     static createUser(payload){
